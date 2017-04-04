@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/amatalai/proto_response.svg?branch=master)](https://travis-ci.org/amatalai/proto_response)
+[![Hex.pm](https://img.shields.io/hexpm/v/proto_response.svg?style=flat&colorB=6B4D90)](https://hex.pm/packages/proto_response)
+[![Hex.pm](https://img.shields.io/hexpm/dt/proto_response.svg?style=flat)](https://hex.pm/packages/proto_response)
 # ProtoResponse
 
 Asserts the given status code, that we have an application/x-protobuf response and returns the decoded Protobuf
