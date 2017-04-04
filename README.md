@@ -1,11 +1,8 @@
 # ProtoResponse
 
-**TODO: Add description**
+Asserts the given status code, that we have an application/x-protobuf response and returns the decoded Protobuf
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `proto_response` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -13,7 +10,12 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/proto_response](https://hexdocs.pm/proto_response).
+## Usage
 
+```elixir
+test "valid response", %{conn: conn} do
+  #...
+
+  assert proto_response(conn, 200, ProtoModule.ProtoMessage)
+end
+```
