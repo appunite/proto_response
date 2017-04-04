@@ -1,16 +1,32 @@
 defmodule ProtoResponse.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :proto_response,
-      version: "0.1.0",
-      elixir: "~> 1.4",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
       deps: deps(),
-      elixirc_paths: elixirc_paths(Mix.env)
+      description: description(),
+      elixir: "~> 1.4",
+      elixirc_paths: elixirc_paths(Mix.env),
+      package: package(),
+      version: @version
     ]
+  end
+
+  defp package do
+    [
+      name: :proto_response,
+      files: ~w(lib mix.exs README.md LICENSE),
+      maintainers: ["Tobiasz Małecki"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/amatalai/proto_response"}
+    ]
+  end
+
+  defp description do
+    "Asserts the given status code, that we have an application/x-protobuf response and returns the decoded Protobuf."
   end
 
   def application do
