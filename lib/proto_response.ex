@@ -12,7 +12,7 @@ defmodule ProtoResponse do
           raise RuntimeError, message: "expected content-type for json, got: \"#{other}\""
       end
 
-      response = response(conn, code)
+      response = Phoenix.ConnTest.response(conn, code)
 
       try do
         %{__struct__: ^proto} = response |> proto.decode()

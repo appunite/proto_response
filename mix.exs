@@ -40,8 +40,8 @@ defmodule ProtoResponse.Mixfile do
 
   defp deps do
     [
-      {:exprotobuf, "~> 1.0", only: :test},
-      {:phoenix,    "~> 1.1", only: :test}
+      {:exprotobuf, "~> 1.0"},
+      {:phoenix,    "~> 1.1"}
     ]
   end
 end
