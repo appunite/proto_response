@@ -1,7 +1,7 @@
 defmodule ProtoResponse.Mixfile do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
@@ -41,7 +41,7 @@ defmodule ProtoResponse.Mixfile do
   defp deps do
     [
       {:exprotobuf, "~> 1.0"},
-      {:phoenix,    "~> 1.1"}
+      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
     ]
   end
 end
