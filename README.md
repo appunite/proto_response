@@ -9,7 +9,7 @@ Asserts the given status code, that we have an application/x-protobuf response a
 
 ```elixir
 def deps do
-  [{:proto_response, "~> 0.1.0"}]
+  [{:proto_response, "~> 0.2.0"}]
 end
 ```
 
