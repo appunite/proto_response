@@ -53,4 +53,14 @@ defmodule ProtoResponseTest do
       fn -> proto_response(conn, 200, Proto.M) end
     )
   end
+
+  test "checks status code before headers" do
+    conn = build_conn() |> send_resp(400, "")
+
+    assert_raise(
+      RuntimeError,
+      "expected response with status 200, got: 400, with body:\n",
+      fn -> proto_response(conn, 200, Proto.M) end
+    )
+  end
 end
