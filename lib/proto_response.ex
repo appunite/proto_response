@@ -1,4 +1,7 @@
 defmodule ProtoResponse do
+  @moduledoc """
+  Provides helper function similar to Phoenix.ConnTest.json_response/2, but for protobufs.
+  """
 
   @doc """
   Helper function similar to `Phoenix.ConnTest.json_response/2`, but for
