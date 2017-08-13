@@ -8,7 +8,7 @@ defmodule ProtoResponse do
       nil ->
         raise RuntimeError, message: "no content-type was set, expected a protobuf response"
       other ->
-        raise RuntimeError, message: "expected content-type for json, got: \"#{other}\""
+        raise RuntimeError, message: "expected content-type for protobuf, got: \"#{other}\""
     end
 
     try do
