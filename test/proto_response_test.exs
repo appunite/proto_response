@@ -49,7 +49,7 @@ defmodule ProtoResponseTest do
 
     assert_raise(
       RuntimeError,
-      "expected content-type for json, got: \"application/json; charset=utf-8\"",
+      "expected content-type for protobuf, got: \"application/json; charset=utf-8\"",
       fn -> proto_response(conn, 200, Proto.M) end
     )
   end

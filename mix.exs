@@ -1,12 +1,12 @@
 defmodule ProtoResponse.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project do
     [
       app: :proto_response,
-      deps: deps(),
+      deps: deps(System.get_env("PROTOBUF_PACKAGE")),
       description: description(),
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -38,9 +38,23 @@ defmodule ProtoResponse.Mixfile do
   defp elixirc_paths(:test), do: ["lib", "test"]
   defp elixirc_paths(_),     do: ["lib"]
 
-  defp deps do
+  # both libraries uses same module name :/
+  defp deps("exprotobuf") do
     [
-      {:exprotobuf, "~> 1.0"},
+      {:exprotobuf, "~> 1.0", optional: true},
+      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
+    ]
+  end
+  defp deps("protobuf") do
+    [
+      {:protobuf, "~> 0.3.2", optional: true},
+      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
+    ]
+  end
+  defp deps(_) do
+    [
+      {:exprotobuf, "~> 1.0", optional: true},
+      {:protobuf, "~> 0.3.2", optional: true},
       {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
     ]
   end
