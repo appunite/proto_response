@@ -3,13 +3,15 @@
 [![Hex.pm](https://img.shields.io/hexpm/dt/proto_response.svg?style=flat)](https://hex.pm/packages/proto_response)
 # ProtoResponse
 
-Asserts the given status code, that we have an application/x-protobuf response and returns the decoded Protobuf
+Provides helper function similar to `Phoenix.ConnTest.json_response/2`, but for protobufs.<br>
+It asserts the given status code, that we have an application/x-protobuf response and returns the decoded protobuf.<br>
+It doesn't validate decoded protobuf correctness.
 
 ## Installation
 
 ```elixir
 def deps do
-  [{:proto_response, "~> 0.2.0"}]
+  [{:proto_response, "~> 0.3.0"}]
 end
 ```
 

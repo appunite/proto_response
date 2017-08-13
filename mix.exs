@@ -26,7 +26,7 @@ defmodule ProtoResponse.Mixfile do
   end
 
   defp description do
-    "Asserts the given status code, that we have an application/x-protobuf response and returns the decoded Protobuf."
+    "Provides helper function similar to Phoenix.ConnTest.json_response/2, but for protobuf"
   end
 
   def application do
@@ -35,7 +35,7 @@ defmodule ProtoResponse.Mixfile do
     ]
   end
 
-  defp elixirc_paths(:test), do: ["lib", "test"]
+  defp elixirc_paths(:test), do: ["lib", "test/proto.ex"]
   defp elixirc_paths(_),     do: ["lib"]
 
   # both libraries uses same module name :/
