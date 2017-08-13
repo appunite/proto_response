@@ -42,20 +42,22 @@ defmodule ProtoResponse.Mixfile do
   defp deps("exprotobuf") do
     [
       {:exprotobuf, "~> 1.0", optional: true},
-      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
+      {:phoenix, "~> 1.1 or ~> 1.3-rc"}
     ]
   end
   defp deps("protobuf") do
     [
       {:protobuf, "~> 0.3.2", optional: true},
-      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
+      {:phoenix, "~> 1.1 or ~> 1.3-rc"}
     ]
   end
   defp deps(_) do
     [
       {:exprotobuf, "~> 1.0", optional: true},
       {:protobuf, "~> 0.3.2", optional: true},
-      {:phoenix,    "~> 1.1 or ~> 1.3-rc"}
+      {:phoenix, "~> 1.1 or ~> 1.3-rc"},
+
+      {:ex_doc, "~> 0.13", only: :dev}
     ]
   end
 end
