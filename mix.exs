@@ -21,7 +21,7 @@ defmodule ProtoResponse.Mixfile do
       files: ~w(lib mix.exs README.md LICENSE),
       maintainers: ["Tobiasz Małecki"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/amatalai/proto_response"}
+      links: %{"GitHub" => "https://github.com/appunite/proto_response"}
     ]
   end
 
