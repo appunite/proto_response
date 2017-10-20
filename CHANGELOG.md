@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0
+* More helpful messages when protobuf module is not available
+
 ## 0.3.0
 * Marked exprotobuf as optional dependency
 * Added protobuf as optional dependency
