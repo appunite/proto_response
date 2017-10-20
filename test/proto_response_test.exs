@@ -54,6 +54,17 @@ defmodule ProtoResponseTest do
     )
   end
 
+  test "raise response module doesn't exist" do
+    resp = Proto.M.new(text: "test") |> Proto.M.encode()
+    conn = build_conn() |> put_resp_content_type("application/x-protobuf") |> send_resp(200, resp)
+
+    assert_raise(
+      RuntimeError,
+      "module Proto.Missing is not available",
+      fn -> proto_response(conn, 200, Proto.Missing) end
+    )
+  end
+
   test "checks status code before headers" do
     conn = build_conn() |> send_resp(400, "")
 
