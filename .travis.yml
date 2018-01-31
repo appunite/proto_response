@@ -3,6 +3,7 @@ language: elixir
 elixir:
   - 1.4
   - 1.5
+  - 1.6
 
 otp_release:
   - 18.0
@@ -12,3 +13,8 @@ otp_release:
 env:
   - PROTOBUF_PACKAGE=exprotobuf
   - PROTOBUF_PACKAGE=protobuf
+
+matrix:
+  exclude:
+    - elixir: 1.6
+      otp_release: 18.0
