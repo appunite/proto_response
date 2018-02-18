@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1
+* Changed `protobuf` requirement from `~> 0.3.2` to `~> 0.3`
+
 ## 0.4.0
 * More helpful messages when protobuf module is not available
 
