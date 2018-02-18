@@ -47,14 +47,14 @@ defmodule ProtoResponse.Mixfile do
   end
   defp deps("protobuf") do
     [
-      {:protobuf, "~> 0.3.2", optional: true},
+      {:protobuf, "~> 0.3", optional: true},
       {:phoenix, "~> 1.1"}
     ]
   end
   defp deps(_) do
     [
       {:exprotobuf, "~> 1.0", optional: true},
-      {:protobuf, "~> 0.3.2", optional: true},
+      {:protobuf, "~> 0.3", optional: true},
       {:phoenix, "~> 1.1"},
 
       {:ex_doc, "~> 0.13", only: :dev}
