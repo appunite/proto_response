@@ -1,28 +1,55 @@
 language: elixir
 
-elixir:
-  - 1.4
-  - 1.5
-  - 1.6
-  - 1.7
-
-otp_release:
-  - 18.0
-  - 19.0
-  - 20.0
-  - 21.0
-
-env:
-  - PROTOBUF_PACKAGE=exprotobuf
-  - PROTOBUF_PACKAGE=protobuf
-
 matrix:
-  exclude:
-    - elixir: 1.6
-      otp_release: 18.0
-    - elixir: 1.7
-      otp_release: 18.0
-    - elixir: 1.4
-      otp_release: 21.0
-    - elixir: 1.5
-      otp_release: 21.0
+  include:
+    - elixir: 1.4.5
+      otp_release: 18.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.4.5
+      otp_release: 19.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.4.5
+      otp_release: 20.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.5.3
+      otp_release: 18.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.5.3
+      otp_release: 19.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.5.3
+      otp_release: 20.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.6.6
+      otp_release: 19.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.6.6
+      otp_release: 20.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.6.6
+      otp_release: 21.2
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.7.4
+      otp_release: 19.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.7.4
+      otp_release: 20.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.7.4
+      otp_release: 21.2
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.8.0
+      otp_release: 20.3
+      env: PROTOBUF_PACKAGE=protobuf
+    - elixir: 1.8.0
+      otp_release: 21.2
+      env: PROTOBUF_PACKAGE=protobuf
+    # additional checks
+    - elixir: 1.8.0
+      otp_release: 21.2
+      install: skip
+      script: mix format --check-formatted --dry-run
+      env: FORMATTER=true # only as label in travis
+    - elixir: 1.8.0
+      otp_release: 21.2
+      env: PROTOBUF_PACKAGE=exprotobuf
