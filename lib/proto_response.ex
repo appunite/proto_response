@@ -40,11 +40,13 @@ defmodule ProtoResponse do
   end
 
   defp ensure_content_type_or_raise!(conn) do
-    case Plug.Conn.get_resp_header(conn, "content-type") |> List.first do
+    case Plug.Conn.get_resp_header(conn, "content-type") |> List.first() do
       "application/x-protobuf" <> _ ->
         :ok
+
       nil ->
         raise RuntimeError, message: "no content-type was set, expected a protobuf response"
+
       other ->
         raise RuntimeError, message: "expected content-type for protobuf, got: \"#{other}\""
     end
@@ -52,7 +54,9 @@ defmodule ProtoResponse do
 
   defp ensure_module_available_or_raise!(proto_module) do
     case Code.ensure_loaded(proto_module) do
-      {:module, ^proto_module} -> :ok
+      {:module, ^proto_module} ->
+        :ok
+
       {:error, _} ->
         raise RuntimeError, message: "module #{module_name(proto_module)} is not available"
     end

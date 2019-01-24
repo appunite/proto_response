@@ -14,6 +14,6 @@ if System.get_env("PROTOBUF_PACKAGE") == "protobuf" do
 
     defstruct [:text]
 
-    field :text, 1, optional: true, type: :string
+    field(:text, 1, optional: true, type: :string)
   end
 end

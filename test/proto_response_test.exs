@@ -13,7 +13,8 @@ defmodule ProtoResponseTest do
   end
 
   test "raise when response can't be decoded" do
-    conn = build_conn() |> put_resp_content_type("application/x-protobuf") |> send_resp(200, "test")
+    conn =
+      build_conn() |> put_resp_content_type("application/x-protobuf") |> send_resp(200, "test")
 
     assert_raise(
       RuntimeError,

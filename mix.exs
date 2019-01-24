@@ -9,7 +9,7 @@ defmodule ProtoResponse.Mixfile do
       deps: deps(System.get_env("PROTOBUF_PACKAGE")),
       description: description(),
       elixir: "~> 1.4",
-      elixirc_paths: elixirc_paths(Mix.env),
+      elixirc_paths: elixirc_paths(Mix.env()),
       package: package(),
       version: @version
     ]
@@ -36,7 +36,7 @@ defmodule ProtoResponse.Mixfile do
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/proto.ex"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 
   # both libraries uses same module name :/
   defp deps("exprotobuf") do
@@ -45,18 +45,19 @@ defmodule ProtoResponse.Mixfile do
       {:phoenix, "~> 1.1"}
     ]
   end
+
   defp deps("protobuf") do
     [
       {:protobuf, "~> 0.3", optional: true},
       {:phoenix, "~> 1.1"}
     ]
   end
+
   defp deps(_) do
     [
       {:exprotobuf, "~> 1.0", optional: true},
       {:protobuf, "~> 0.3", optional: true},
       {:phoenix, "~> 1.1"},
-
       {:ex_doc, "~> 0.13", only: :dev}
     ]
   end
